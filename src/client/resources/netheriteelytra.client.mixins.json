@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "ynotnaexists.netheriteelytra.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"LivingEntityRendererInvoker",
+		"PlayerEntityRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
