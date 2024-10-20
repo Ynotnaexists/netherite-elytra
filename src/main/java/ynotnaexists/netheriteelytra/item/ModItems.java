@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -22,10 +23,10 @@ public class ModItems {
     }
     public static void registerModItems() {
         NetheriteElytra.LOGGER.info("Registering Mod Items for " + NetheriteElytra.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addToFoodAndDrinkTab);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addToToolsAndUtilitiesTab);
     }
-    public static void addToFoodAndDrinkTab(FabricItemGroupEntries entries) {
-        entries.add(ModItems.NETHERITE_ELYTRA.asItem());
+    public static void addToToolsAndUtilitiesTab(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.ELYTRA, ModItems.NETHERITE_ELYTRA);
     }
 
 }
